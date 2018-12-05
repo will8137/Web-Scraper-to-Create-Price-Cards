@@ -1,0 +1,15 @@
+{
+  "name": "scraperdynamic",
+  "version": "0.1.2",
+  "description": "Dynamic web scraper for GAK",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "figlet": "^1.2.1",
+    "fs-extra": "^7.0.1",
+    "puppeteer": "^1.11.0"
+  },
+  "devDependencies": {},
+  "author": "Will Lytton",
+  "license": "ISC"
+}

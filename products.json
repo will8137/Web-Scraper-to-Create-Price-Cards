@@ -1,0 +1,100 @@
+[
+  {
+    "productName": "SSL XLogic Alpha-VHD Pre Rack",
+    "productPrice": 1271,
+    "productFinanceOptions": [
+      {
+        "optionLength": "Classic Credit 24 Months 15.9%",
+        "optionAPR": "15.9%",
+        "optionAmount": "£61.51"
+      },
+      {
+        "optionLength": "Classic Credit 36 Months 15.9%",
+        "optionAPR": "15.9%",
+        "optionAmount": "£43.95"
+      },
+      {
+        "optionLength": "Classic Credit 48 Months 19.9%",
+        "optionAPR": "19.9%",
+        "optionAmount": "£37.52"
+      }
+    ]
+  },
+  {
+    "productName": "SSL XLogic Alpha Channel Rack",
+    "productPrice": 932,
+    "productFinanceOptions": [
+      {
+        "optionLength": "Interest Free Finance (6 Months)",
+        "optionAPR": "0%",
+        "optionAmount": "£139.67"
+      },
+      {
+        "optionLength": "Interest Free Finance (10 Months)",
+        "optionAPR": "0%",
+        "optionAmount": "£83.80"
+      },
+      {
+        "optionLength": "Classic Credit 24 Months 15.9%",
+        "optionAPR": "15.9%",
+        "optionAmount": "£40.56"
+      },
+      {
+        "optionLength": "Classic Credit 36 Months 15.9%",
+        "optionAPR": "15.9%",
+        "optionAmount": "£28.98"
+      },
+      {
+        "optionLength": "Buy Now Pay Later (12 Months/ 36) 19.9",
+        "optionAPR": "19.9%",
+        "optionAmount": "£33.99"
+      },
+      {
+        "optionLength": "Buy Now Pay Later (9 Months / 39) 19.9",
+        "optionAPR": "19.9%",
+        "optionAmount": "£30.60"
+      },
+      {
+        "optionLength": "Buy Now Pay Later (6/42) 19.9",
+        "optionAPR": "19.9%",
+        "optionAmount": "£27.72"
+      },
+      {
+        "optionLength": "Classic Credit 48 Months 19.9%",
+        "optionAPR": "19.9%",
+        "optionAmount": "£24.74"
+      }
+    ]
+  },
+  {
+    "productName": "Black Lion Audio B12a MKII 500 series Mic Pre",
+    "productPrice": 425,
+    "productFinanceOptions": [
+      {
+        "optionLength": "Interest Free Finance (6 Months)",
+        "optionAPR": "0%",
+        "optionAmount": "£63.67"
+      },
+      {
+        "optionLength": "Buy Now Pay Later (12 Months/ 36) 19.9",
+        "optionAPR": "19.9%",
+        "optionAmount": "£14.44"
+      },
+      {
+        "optionLength": "Buy Now Pay Later (9 Months / 39) 19.9",
+        "optionAPR": "19.9%",
+        "optionAmount": "£13.00"
+      },
+      {
+        "optionLength": "Buy Now Pay Later (6/42) 19.9",
+        "optionAPR": "19.9%",
+        "optionAmount": "£11.78"
+      },
+      {
+        "optionLength": "Classic Credit 48 Months 19.9%",
+        "optionAPR": "19.9%",
+        "optionAmount": "£11.28"
+      }
+    ]
+  }
+]
