@@ -1,5 +1,9 @@
-const puppeteer = require('puppeteer');
 const fs = require('fs-extra');
+const Path = require('path')
+const Util = require('util');
+const puppeteer = require('puppeteer');
+const Handlebars = require('handlebars');
+const ReadFile = Util.promisify(fs.readFile);
 const chalk = require('chalk');
 const figlet = require('figlet');
 
@@ -83,10 +87,13 @@ async function readJsonFile() {
 	console.log(chalk.yellowBright('Reading products.json'));
 
 	try {
+		//Read json file with array of products
     const productsJson = await fs.readJson('./products.json');
 
-    console.log(chalk.green('Products Loaded!'));
+    //Probably fires before actual load
+    console.log(chalk.green('Products Loaded!', '\n'));
 
+    //Return Product Array
     return productsJson;
 
   } catch (err) {
@@ -95,6 +102,53 @@ async function readJsonFile() {
 
 };
 
+async function createPriceCard(productList) {
+
+	try {
+		console.log(chalk.yellowBright('Starting PDF Generation'));
+		
+		const templatePath = Path.resolve('./Assets/htmlFinanceCard/FinancePriceCardTemplatePro.html');
+
+		const content = await ReadFile(templatePath, 'utf8');
+
+		// compile and render the template with handlebars
+	  const template = Handlebars.compile(content);
+
+	  return template();
+
+	} catch (error) {
+	  throw new Error('Cannot create invoice HTML template.', error);
+	}
+
+};
+
+async function pdfGenerator(html) {
+
+  const browser = await puppeteer.launch({headless: true})
+  const page = await browser.newPage()
+  await page.setContent(html)
+
+  console.log(chalk.green('PDF Generated!', '\n'));
+
+  return page.pdf();
+}
+
+async function savePDF(pdfData) {
+
+	console.log(chalk.yellowBright('Saving PDF'));
+
+	try {
+		await fs.writeFile('./Assets/pdf/priceCard.pdf', pdfData, 'binary').then(data => {
+			console.log(chalk.green('PDF Saved!'));
+		});
+	} catch(err) {
+		console.log(chalk.red("error" + error));
+    	throw error;
+	}
+
+};
+
+//Main Run Function
 (async () => {
 
 	console.log(figlet.textSync('Price Checker', {
@@ -163,6 +217,15 @@ async function readJsonFile() {
 
   //Get Products from json file
   const productList = await readJsonFile();
+
+  //Create price card. Maybe add for loop here when working
+  var priceCard = await createPriceCard(productList);
+
+  //Generate PDF
+  var pdfPriceCard = await pdfGenerator(priceCard);
+
+  //Save PDF to (Assets/pdf)
+  await savePDF(pdfPriceCard);
 
   //Stop App
   process.exit(0);
